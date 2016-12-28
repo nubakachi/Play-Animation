@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreAnimationBasics" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zxs-Lv-qAG">
+                                <rect key="frame" x="0.0" y="0.0" width="94" height="167"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Xs-rg-anf">
+                                <rect key="frame" x="0.0" y="205" width="94" height="167"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zAo-A0-UsH">
+                                <rect key="frame" x="140.5" y="250" width="94" height="167"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zAo-A0-UsH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2WS-6Q-cpR"/>
+                            <constraint firstItem="zAo-A0-UsH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6YD-Aq-aBe"/>
+                            <constraint firstItem="Zxs-Lv-qAG" firstAttribute="centerX" secondItem="6Xs-rg-anf" secondAttribute="centerX" id="Ecn-M1-r5C"/>
+                            <constraint firstItem="Zxs-Lv-qAG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.25" id="LxP-6u-Z3d"/>
+                            <constraint firstItem="Zxs-Lv-qAG" firstAttribute="width" secondItem="6Xs-rg-anf" secondAttribute="width" id="Uhd-BK-ARX"/>
+                            <constraint firstItem="Zxs-Lv-qAG" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.25" id="YzQ-12-J5P"/>
+                            <constraint firstItem="Zxs-Lv-qAG" firstAttribute="height" secondItem="6Xs-rg-anf" secondAttribute="height" id="Ze4-Vc-fyu"/>
+                            <constraint firstItem="Zxs-Lv-qAG" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="Zit-2u-Ujh"/>
+                            <constraint firstItem="6Xs-rg-anf" firstAttribute="top" secondItem="Zxs-Lv-qAG" secondAttribute="bottom" constant="38" id="bou-mC-rnX"/>
+                            <constraint firstItem="zAo-A0-UsH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="gM6-U8-M57"/>
+                            <constraint firstItem="Zxs-Lv-qAG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.25" id="hJv-9x-3eF"/>
+                            <constraint firstItem="zAo-A0-UsH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.25" id="rQ0-6d-4fQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="groupAnimation" destination="zAo-A0-UsH" id="lhl-N1-sJA"/>
+                        <outlet property="rocketImage" destination="Zxs-Lv-qAG" id="Cqp-XT-CgQ"/>
+                        <outlet property="secondRocket" destination="6Xs-rg-anf" id="Ksi-HU-qGZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>
