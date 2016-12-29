@@ -24,14 +24,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // addImageToView()
-//        animateRocket1()
-       // manyRocket()
-        
-      //   newView = UIView(frame: CGRect(x: 30, y: 50, width: 50, height: 50))
-        // newView.backgroundColor = .yellow
-       //  self.view.addSubview(newView)
-       // timingFunctions()
+        //addImageToView()
+        //animateRocket1()
+        //manyRocket()
+        //newView = UIView(frame: CGRect(x: 30, y: 50, width: 50, height: 50))
+        //newView.backgroundColor = .yellow
+        //self.view.addSubview(newView)
+        //timingFunctions()
         
         
         Animation()
@@ -169,24 +168,47 @@ class ViewController: UIViewController {
         
         
         let group = CAAnimationGroup()
-        group.animations = [zPostion,rotation,position]
+        group.animations =  [zPostion]  //[zPostion,rotation,position]
         group.duration = 1.2
         group.beginTime = 0.5
+        group.repeatCount = 66
+        group.autoreverses = true
         
-        
-        self.groupAnimation.layer.add(group, forKey:nil)
+        self.groupAnimation.layer.add(group, forKey:"allMyAnimations")
         self.groupAnimation.layer.zPosition = 1
-        
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
 
+//
+//        //create animation part -2
+//        let zPosition: CABasicAnimation = CABasicAnimation.init()
+//        zPosition.keyPath = "zPosition"
+//        zPosition.fromValue = -1
+//        zPosition.toValue = 1
+//        zPosition.duration = 1.2
+//        
+//        //rotation
+//        let rotation2 = CAKeyframeAnimation.init()
+//        rotation2.keyPath = "transform.rotation";
+//        rotation2.values = [ 0, 0.14, 0 ];
+//        rotation2.duration = 1.2;
+//        rotation2.timingFunctions = [CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut),  CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)]
+//        
+//        //position
+//        let position2: CAKeyframeAnimation = CAKeyframeAnimation.init()
+//        position2.keyPath = "position";
+//        position2.values = [NSValue.init(cgPoint: .zero), NSValue.init(cgPoint: CGPoint(x:110, y:-20)), NSValue.init(cgPoint: .zero )]
+//        position2.timingFunctions = [CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut),  CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)]
+//        position2.isAdditive = true
+//        position2.duration = 1.2
+//        
+//        //group
+//        let group2: CAAnimationGroup = CAAnimationGroup.init()
+//        group2.animations = [ zPosition, rotation, position ]
+//        group2.duration = 1.2
+//        group2.beginTime = 0.5
+//        
+//        self.groupAnimation.layer.add(group, forKey: "allMyAnimations")
+//        self.groupAnimation.layer.zPosition = 1;
+//        
+    }
 }
 
