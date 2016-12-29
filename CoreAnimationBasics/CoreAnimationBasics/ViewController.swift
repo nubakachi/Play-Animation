@@ -28,10 +28,13 @@ class ViewController: UIViewController {
 //        animateRocket1()
        // manyRocket()
         
-         newView = UIView(frame: CGRect(x: 30, y: 50, width: 50, height: 50))
-         newView.backgroundColor = .yellow
-         self.view.addSubview(newView)
-        timingFunctions()
+      //   newView = UIView(frame: CGRect(x: 30, y: 50, width: 50, height: 50))
+        // newView.backgroundColor = .yellow
+       //  self.view.addSubview(newView)
+       // timingFunctions()
+        
+        
+        Animation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -143,10 +146,36 @@ class ViewController: UIViewController {
     
     
     
-    func GroupAnimation() {
+    func Animation() {
         
         
+        let zPostion  = CABasicAnimation(keyPath: "zPosition")
+        zPostion.fromValue = -1
+        zPostion.toValue = 1
+        zPostion.duration = 1.2
         
+        
+        let rotation = CAKeyframeAnimation(keyPath: "transform.rotation")
+        rotation.values = [ 0, 0.14, 0 ]
+        rotation.duration = 1.2
+        rotation.timingFunctions = [ CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),  CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)  ]
+        
+        
+        let position = CAKeyframeAnimation(keyPath: "position")
+        position.values = [ NSValue.init(cgPoint: .zero) , NSValue.init(cgPoint: CGPoint(x: 110, y: -20))  ,  NSValue.init(cgPoint: .zero) ]
+        position.timingFunctions = [ CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),  CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)  ]
+        position.isAdditive = true
+        position.duration = 1.2
+        
+        
+        let group = CAAnimationGroup()
+        group.animations = [zPostion,rotation,position]
+        group.duration = 1.2
+        group.beginTime = 0.5
+        
+        
+        self.groupAnimation.layer.add(group, forKey:nil)
+        self.groupAnimation.layer.zPosition = 1
         
         
     }
