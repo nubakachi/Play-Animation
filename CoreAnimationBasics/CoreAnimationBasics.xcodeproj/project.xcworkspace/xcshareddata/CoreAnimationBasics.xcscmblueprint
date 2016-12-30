@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4775DA14CB8E626413EAB397367F326A690B62DD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "582BD15E8B49C0BA22A369D129DD5391A0C00CC3" : 9223372036854775807,
+    "4775DA14CB8E626413EAB397367F326A690B62DD" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7CA8E95D-5CE7-4121-9B42-A66AE9558457",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "582BD15E8B49C0BA22A369D129DD5391A0C00CC3" : "",
+    "4775DA14CB8E626413EAB397367F326A690B62DD" : "PlayWith-Animation\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CoreAnimationBasics",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CoreAnimationBasics\/CoreAnimationBasics.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/shrawan2015\/Play-Animation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4775DA14CB8E626413EAB397367F326A690B62DD"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/shrawan2015\/Play-Animation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "582BD15E8B49C0BA22A369D129DD5391A0C00CC3"
+    }
+  ]
+}

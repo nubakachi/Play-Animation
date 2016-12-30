@@ -33,15 +33,23 @@ class ViewController: UIViewController {
         //timingFunctions()
         
         
-        Animation()
+        //Animation()
+        
+        let attributedString = animateText()
+        let label = UITextView(frame:CGRect(x: 0, y: 20, width: 400, height: 400))
+        label.attributedText = attributedString
+        label.isEditable = true
+        self.view.addSubview(label)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
 
 
+    
+    
     
     func addImageToView() {
         rocketImage.image = UIImage(named: "launch.png")
@@ -144,71 +152,105 @@ class ViewController: UIViewController {
     }
     
     
+
     
     func Animation() {
         
         
-        let zPostion  = CABasicAnimation(keyPath: "zPosition")
-        zPostion.fromValue = -1
-        zPostion.toValue = 1
-        zPostion.duration = 1.2
+//        let zPostion  = CABasicAnimation(keyPath: "zPosition")
+//        zPostion.fromValue = -1
+//        zPostion.toValue = 1
+//        zPostion.duration = 1.2
+//        
+//        
+//        let rotation = CAKeyframeAnimation(keyPath: "transform.rotation")
+//        rotation.values = [ 0, 0.14, 0 ]
+//        rotation.duration = 1.2
+//        rotation.timingFunctions = [ CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),  CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)  ]
+//        
+//        
+//        let position = CAKeyframeAnimation(keyPath: "position")
+//        position.values = [ NSValue.init(cgPoint: .zero) , NSValue.init(cgPoint: CGPoint(x: 110, y: -20))  ,  NSValue.init(cgPoint: .zero) ]
+//        position.timingFunctions = [ CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),  CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)  ]
+//        position.isAdditive = true
+//        position.duration = 1.2
+//        
+//        
+//        let group = CAAnimationGroup()
+//        group.animations =  [rotation]  //[zPostion,rotation,position]
+//        group.duration = 1.2
+//        group.beginTime = 0.5
+//        group.repeatCount = 66
+//        group.autoreverses = true
+//        
+//        self.groupAnimation.layer.add(group, forKey:"allMyAnimations")
+//        self.groupAnimation.layer.zPosition = 1
+//
+
+//
         
+        
+//        let fadeOut = CABasicAnimation(keyPath: "opacity")
+//        fadeOut.fromValue = 1
+//        fadeOut.toValue = 0
+//        fadeOut.duration = 1
+//        
+//        let expandScale = CABasicAnimation()
+//        expandScale.keyPath = "transform"
+//        expandScale.valueFunction = CAValueFunction(name: kCAValueFunctionScale)
+//        expandScale.fromValue = [1, 1, 1]
+//        expandScale.toValue = [3, 3, 3]
+//        
+
+        let position = CAKeyframeAnimation(keyPath: "position")
+        position.values = [ NSValue.init(cgPoint: .zero) , NSValue.init(cgPoint: CGPoint(x: 0, y: -20))  ,  NSValue.init(cgPoint: .zero) ]
+        position.timingFunctions = [ CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),  CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)  ]
+        position.isAdditive = true
+        position.duration = 1.2
         
         let rotation = CAKeyframeAnimation(keyPath: "transform.rotation")
         rotation.values = [ 0, 0.14, 0 ]
         rotation.duration = 1.2
         rotation.timingFunctions = [ CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),  CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)  ]
         
+        let fadeAndScale = CAAnimationGroup()
+        fadeAndScale.animations = [ position, rotation]
+        fadeAndScale.duration = 1
         
-        let position = CAKeyframeAnimation(keyPath: "position")
-        position.values = [ NSValue.init(cgPoint: .zero) , NSValue.init(cgPoint: CGPoint(x: 110, y: -20))  ,  NSValue.init(cgPoint: .zero) ]
-        position.timingFunctions = [ CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),  CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)  ]
-        position.isAdditive = true
-        position.duration = 1.2
+        self.groupAnimation.layer.add(fadeAndScale, forKey:"addLayer")
         
         
-        let group = CAAnimationGroup()
-        group.animations =  [zPostion]  //[zPostion,rotation,position]
-        group.duration = 1.2
-        group.beginTime = 0.5
-        group.repeatCount = 66
-        group.autoreverses = true
         
-        self.groupAnimation.layer.add(group, forKey:"allMyAnimations")
-        self.groupAnimation.layer.zPosition = 1
+        
+    }
+    
+    
+    
+    func animateText() -> NSAttributedString {
+        let attachment:NSTextAttachment = NSTextAttachment()
+        attachment.image = UIImage(named: "launch.png")
+       
+        attachment.setImageHeight(height: 20)
+       
+        let attachmentString:NSAttributedString = NSAttributedString(attachment: attachment)
+        let attributedString:NSMutableAttributedString = NSMutableAttributedString(string:"This is the attributed String.")
+        attributedString.append(attachmentString)
+        return attributedString
+    }
+    
+}
 
-//
-//        //create animation part -2
-//        let zPosition: CABasicAnimation = CABasicAnimation.init()
-//        zPosition.keyPath = "zPosition"
-//        zPosition.fromValue = -1
-//        zPosition.toValue = 1
-//        zPosition.duration = 1.2
-//        
-//        //rotation
-//        let rotation2 = CAKeyframeAnimation.init()
-//        rotation2.keyPath = "transform.rotation";
-//        rotation2.values = [ 0, 0.14, 0 ];
-//        rotation2.duration = 1.2;
-//        rotation2.timingFunctions = [CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut),  CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)]
-//        
-//        //position
-//        let position2: CAKeyframeAnimation = CAKeyframeAnimation.init()
-//        position2.keyPath = "position";
-//        position2.values = [NSValue.init(cgPoint: .zero), NSValue.init(cgPoint: CGPoint(x:110, y:-20)), NSValue.init(cgPoint: .zero )]
-//        position2.timingFunctions = [CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut),  CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)]
-//        position2.isAdditive = true
-//        position2.duration = 1.2
-//        
-//        //group
-//        let group2: CAAnimationGroup = CAAnimationGroup.init()
-//        group2.animations = [ zPosition, rotation, position ]
-//        group2.duration = 1.2
-//        group2.beginTime = 0.5
-//        
-//        self.groupAnimation.layer.add(group, forKey: "allMyAnimations")
-//        self.groupAnimation.layer.zPosition = 1;
-//        
+
+
+// Keeping Image aspect ratio
+extension NSTextAttachment {
+    func setImageHeight(height: CGFloat) {
+        guard let image = image else { return }
+        let ratio = image.size.width / image.size.height
+        bounds = CGRect(x:bounds.origin.x, y:bounds.origin.y, width:ratio * height, height:height)
     }
 }
 
+extension NSString {
+    
+}
