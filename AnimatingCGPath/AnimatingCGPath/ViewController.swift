@@ -17,11 +17,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         addAnimateLayer()
         addPathLayer()
         addpenLayer()
         drawGmailPath()
+
+      
         setupTextLayer()
         animatePenAndText()
         
@@ -80,13 +82,14 @@ class ViewController: UIViewController {
         self.penLayer = penLayer
     }
     
-    
     func animatePenAndText() {
+        
         let pathAnimation = CABasicAnimation(keyPath: "strokeEnd")
         pathAnimation.duration = 10.0
         pathAnimation.fromValue = 0.0
         pathAnimation.toValue = 1.0
         pathLayer?.add(pathAnimation, forKey: "strokeEnd")
+        
         let penAnimation = CAKeyframeAnimation(keyPath: "position")
         penAnimation.duration = 10.0
         penAnimation.path = self.pathLayer.path
@@ -98,7 +101,10 @@ class ViewController: UIViewController {
     
     //MARK:- Animate Text View in ios
     func setupTextLayer() {
-        let font = CTFontCreateWithName("PingFangSC-Bold" as CFString?, 120, nil)
+      
+        clearAnimation ()
+        
+        let font = CTFontCreateWithName("PingFangSC-Bold" as CFString?, 60, nil)
         let attrStr = NSAttributedString(string: "Hello Swift!", attributes: [kCTFontAttributeName as String: font])
         let line = CTLineCreateWithAttributedString(attrStr)
         let runArray = CTLineGetGlyphRuns(line)
@@ -120,6 +126,7 @@ class ViewController: UIViewController {
                 letters.addPath(letter!, transform:t)
             }
         }
+        
         let path = UIBezierPath()
         path.move(to: CGPoint.zero)
         path.append(UIBezierPath(cgPath: letters))
@@ -133,10 +140,20 @@ class ViewController: UIViewController {
         layer.lineJoin = kCALineJoinBevel
         animateLayer?.addSublayer(layer)
         pathLayer = layer
+        
+        addpenLayer()
     }
     
+    func clearAnimation() {
+        penLayer?.removeFromSuperlayer()
+        pathLayer?.removeFromSuperlayer()
+        penLayer = nil
+        pathLayer = nil
+
+    }
     
     func animateText() {
+        
         
     }
 }
@@ -182,18 +199,8 @@ class ViewController: UIViewController {
 //
 //
 //
-//    func drawPenPath() -> UIBezierPath {
-//        let path = UIBezierPath()
-//        path.move(to: CGPoint(x: 10, y: 10) )
-//        path.addLine(to: CGPoint(x: 14, y: 10) )
-//        path.addLine(to: CGPoint(x: 14, y: 15))
-//        path.addLine(to: CGPoint(x: 12, y: 17) )
-//        path.addLine(to: CGPoint(x: 10, y: 15))
-//        path.stroke()
-//        path.fill()
-//        path.close()
-//        return path
-//    }
+
+
 //
 //    func drawPenImage() {
 //        let pensLayer = CALayer()
