@@ -59,11 +59,14 @@ class ViewController: UIViewController {
         let newPoint = CGPoint(x: translation, y: 0.0)
         scrollLayer.scroll(newPoint)
         translation += 10.0
-        if translation > 1600.0 {
-            translation = 10
+        if translation > 1500 {
+            stopDisplayLink()
         }
     }
-
-
+    
+    func stopDisplayLink() {
+        displayLink.invalidate()
+    }
+    
 }
 
