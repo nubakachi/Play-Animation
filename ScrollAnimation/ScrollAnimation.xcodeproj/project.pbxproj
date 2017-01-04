@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041B53341E1D119100A8C92A /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = 041B53331E1D119100A8C92A /* car.png */; };
 		04A889F21E1CDEE3005EE44F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A889F11E1CDEE3005EE44F /* AppDelegate.swift */; };
 		04A889F41E1CDEE3005EE44F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A889F31E1CDEE3005EE44F /* ViewController.swift */; };
 		04A889F71E1CDEE6005EE44F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A889F51E1CDEE6005EE44F /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041B53331E1D119100A8C92A /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
 		04A889EE1E1CDEE2005EE44F /* ScrollAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A889F11E1CDEE3005EE44F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04A889F31E1CDEE3005EE44F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				04A889F11E1CDEE3005EE44F /* AppDelegate.swift */,
 				04A88A031E1CF84D005EE44F /* sky.png */,
 				04A889F31E1CDEE3005EE44F /* ViewController.swift */,
+				041B53331E1D119100A8C92A /* car.png */,
 				04A889F51E1CDEE6005EE44F /* Main.storyboard */,
 				04A889F81E1CDEE6005EE44F /* Assets.xcassets */,
 				04A889FA1E1CDEE6005EE44F /* LaunchScreen.storyboard */,
@@ -128,6 +131,7 @@
 			files = (
 				04A889FC1E1CDEE6005EE44F /* LaunchScreen.storyboard in Resources */,
 				04A889F91E1CDEE6005EE44F /* Assets.xcassets in Resources */,
+				041B53341E1D119100A8C92A /* car.png in Resources */,
 				04A889F71E1CDEE6005EE44F /* Main.storyboard in Resources */,
 				04A88A041E1CF84D005EE44F /* sky.png in Resources */,
 			);
@@ -303,6 +307,7 @@
 				04A88A021E1CDEE6005EE44F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
