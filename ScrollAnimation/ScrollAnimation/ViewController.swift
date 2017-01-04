@@ -15,14 +15,16 @@ class ViewController: UIViewController {
 
     var moveUp : Bool = true
     
+    
+    var layerAtTop:CALayer!
+    var emitterLayer :CAEmitterLayer!
     override func viewDidLoad() {
         super.viewDidLoad()
         addCloudLayerToView()
-        
         addCarToView()
-        
+        addEmiiterFromCar()
         displayLink.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
-
+        addSmoke()
     }
 
 
@@ -91,7 +93,9 @@ class ViewController: UIViewController {
         layer.bounds = CGRect(x:  0 , y:  0, width: (size?.width)!, height: (size?.height)!)
         layer.position = CGPoint(x: (size?.width)!/2, y: (size?.height)!/2)
         layer.contents = imageattTop?.cgImage
+        self.layerAtTop = layer
         self.view.layer.addSublayer(scrollLayerTop)
+        
         scrollLayerTop.addSublayer(layer)
     }
     
@@ -109,7 +113,36 @@ class ViewController: UIViewController {
     }()
 
     
+    
+    func addEmiiterFromCar() {
+        let emitterLayer = CAEmitterLayer()
+        emitterLayer.emitterPosition = CGPoint(x: (layerAtTop.bounds.width / 2) + 40.0, y: -10.0)
+        emitterLayer.emitterShape = kCAEmitterLayerPoint
+        self.emitterLayer  = emitterLayer
+    }
+    
+    
+    lazy var emitterCell: CAEmitterCell = {
+        let emitterCell : CAEmitterCell = CAEmitterCell() // 29
+        emitterCell.scale = 0.1 // 30
+        emitterCell.scaleRange = 0.3 // 31
+        emitterCell.lifetime = 10.0 // 32
+        emitterCell.birthRate = 2 // 33
+        emitterCell.velocity = 20 // 34
+        emitterCell.velocityRange = 50 // 35
+        emitterCell.xAcceleration = -250 // 36
+        emitterCell.yAcceleration = -50 // 37
+        return emitterCell
+    }()
+    
 
+    func addSmoke() {
+        let imgParticle = UIImage(named: "steam.png")
+        emitterCell.contents = imgParticle?.cgImage
+        emitterLayer.emitterCells = [ emitterCell ]
+        layerAtTop.addSublayer(emitterLayer)
+        
+    }
     
     
     
