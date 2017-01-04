@@ -59,6 +59,31 @@ class ViewController: UIViewController {
         return displayLink
     }()
     
+    func stopDisplayLink() {
+        displayLink.invalidate()
+    }
+    
+    
+    
+ 
+    
+  
+    
+    //MARK:- ADD THE CAR ANIMATION 
+    func addCarToView() {
+        let imageattTop = UIImage(named: "car.png")
+        let size = imageattTop?.size
+        let layer = CALayer()
+        layer.bounds =   CGRect(x:  0.0 , y:  0.0, width: (size?.width)!, height: (size?.height)!)
+        layer.position = CGPoint(x: (size?.width)!/2, y: (size?.height)!/2)
+       
+        layer.frame = CGRect(x: 100, y: 100, width: (size?.width)!, height: (size?.height)!)
+        
+        layer.contents = imageattTop?.cgImage
+        self.layerAtTop = layer
+        self.view.layer.addSublayer(scrollLayerTop)
+        scrollLayerTop.addSublayer(layer)
+    }
     
     func scrollLayerScroll() {
         let newPoint = CGPoint(x: translation, y: 0.0)
@@ -67,7 +92,7 @@ class ViewController: UIViewController {
         if translation > 1500 {
             stopDisplayLink()
         }
-        
+
         if (moveUp != false) {
             scrollLayerTop.scroll(to: CGPoint(x: 0.0, y: 10))
             moveUp = false
@@ -75,37 +100,13 @@ class ViewController: UIViewController {
             scrollLayerTop.scroll(to: CGPoint(x: 0.0, y: -10.0))
             moveUp = true
         }
-        
     }
-    
-    func stopDisplayLink() {
-        displayLink.invalidate()
-    }
-    
-    
-    //MARK:- ADD THE CAR ANIMATION 
-    
-    func addCarToView() {
-        
-        let imageattTop = UIImage(named: "car.png")
-        let size = imageattTop?.size
-        let layer = CALayer()
-        layer.bounds = CGRect(x:  0 , y:  0, width: (size?.width)!, height: (size?.height)!)
-        layer.position = CGPoint(x: (size?.width)!/2, y: (size?.height)!/2)
-        layer.contents = imageattTop?.cgImage
-        self.layerAtTop = layer
-        self.view.layer.addSublayer(scrollLayerTop)
-        
-        scrollLayerTop.addSublayer(layer)
-    }
-    
-    
     
     lazy var scrollLayerTop:CAScrollLayer = {
         var scrollLayer = CAScrollLayer()
         // scrollLayer.bounds = CGRect(x: 0, y: 0, width: 150, height: 300)
         scrollLayer.bounds = CGRect(x: 0.0, y: 0.0, width: self.view.bounds.size.width, height:self.view.bounds.size.height) // 9
-        scrollLayer.position = CGPoint(x: self.view.bounds.size.width/2, y: self.view.bounds.size.height/2)
+        scrollLayer.position = CGPoint(x: self.view.bounds.size.width/2 , y: self.view.bounds.size.height/2)
         scrollLayer.borderColor = UIColor.brown.cgColor
         scrollLayer.borderWidth = 2.0
         scrollLayer.scrollMode = kCAScrollVertically
@@ -114,13 +115,13 @@ class ViewController: UIViewController {
 
     
     
+    //MARK:- Add emitter
     func addEmiiterFromCar() {
         let emitterLayer = CAEmitterLayer()
         emitterLayer.emitterPosition = CGPoint(x: (layerAtTop.bounds.width / 2) + 40.0, y: -10.0)
         emitterLayer.emitterShape = kCAEmitterLayerPoint
         self.emitterLayer  = emitterLayer
     }
-    
     
     lazy var emitterCell: CAEmitterCell = {
         let emitterCell : CAEmitterCell = CAEmitterCell() // 29
@@ -141,7 +142,6 @@ class ViewController: UIViewController {
         emitterCell.contents = imgParticle?.cgImage
         emitterLayer.emitterCells = [ emitterCell ]
         layerAtTop.addSublayer(emitterLayer)
-        
     }
     
     
