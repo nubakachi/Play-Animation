@@ -49,6 +49,7 @@ class ViewController: UIViewController {
         heartMovement.duration = 5
         heartMovement.repeatCount = HUGE
         heartMovement.calculationMode = kCAAnimationPaced
+        //how to curve the value
         heartMovement.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)]
         self.heartMovement = heartMovement
         
