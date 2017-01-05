@@ -12,6 +12,7 @@
 		04A196921E1E3762005B347D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A196901E1E3762005B347D /* Main.storyboard */; };
 		04A196941E1E3762005B347D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A196931E1E3762005B347D /* Assets.xcassets */; };
 		04A196971E1E3762005B347D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A196951E1E3762005B347D /* LaunchScreen.storyboard */; };
+		04A196DC1E1E68ED005B347D /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A196DB1E1E68ED005B347D /* launch.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		04A196931E1E3762005B347D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04A196961E1E3762005B347D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04A196981E1E3762005B347D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04A196DB1E1E68ED005B347D /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				04A1968C1E1E3762005B347D /* AppDelegate.swift */,
 				04A1968E1E1E3762005B347D /* ViewController.swift */,
+				04A196DB1E1E68ED005B347D /* launch.png */,
 				04A196901E1E3762005B347D /* Main.storyboard */,
 				04A196931E1E3762005B347D /* Assets.xcassets */,
 				04A196951E1E3762005B347D /* LaunchScreen.storyboard */,
@@ -123,6 +126,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A196DC1E1E68ED005B347D /* launch.png in Resources */,
 				04A196971E1E3762005B347D /* LaunchScreen.storyboard in Resources */,
 				04A196941E1E3762005B347D /* Assets.xcassets in Resources */,
 				04A196921E1E3762005B347D /* Main.storyboard in Resources */,
