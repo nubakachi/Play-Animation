@@ -20,7 +20,6 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureTableView()
         addRefreshControl()
         loadViewFromXib()
@@ -28,26 +27,23 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     
     func addRefreshControl() {
         refreshControl = UIRefreshControl(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 300) )
-        
         refreshControl.backgroundColor = .red
         refreshControl.tintColor = .blue
     }
     
     
     func loadViewFromXib() {
-        
         let refreshContents = Bundle.main.loadNibNamed("RefreshView", owner: self, options: nil)
         let extractView = refreshContents?.first as! UIView
         customView = UIView(frame: self.refreshControl.bounds)
         customView = extractView
+        customView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 20)
         refreshControl.addSubview(customView)
+        refreshControl.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200)
         tblView.insertSubview(refreshControl, at: 0)
-
-        
-        
     }
     
-    func configureTableView(){
+    func configureTableView() {
         tblView.register(UITableViewCell.self, forCellReuseIdentifier: "RefreshCell")
         tblView.delegate = self
         tblView.dataSource = self
