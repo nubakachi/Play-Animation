@@ -18,12 +18,9 @@ class CustomRefreshView: UIControl {
 
     
     weak var delegate: PassDataDelegateData?
-    
     func containingScrollViewDidEndDragging(scrollView:UIScrollView) {
         print(scrollView.contentOffset.y)
-        
         delegate?.tracScrollContent(location: scrollView)
-       
         if scrollView.contentOffset.y <= 50 {
             self.sendActions(for: .valueChanged)
         }
@@ -33,9 +30,7 @@ class CustomRefreshView: UIControl {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-
         drawTheDroplet()
-    
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,4 +42,8 @@ class CustomRefreshView: UIControl {
         let imageView = UIImageView(image: UIImage(named: "Go.png"))
         addSubview(imageView)
     }
+    
+    
+    
+    
 }

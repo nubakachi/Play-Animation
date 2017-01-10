@@ -120,17 +120,15 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         
     }
 
-    
+
+    var contentOffsetY:CGFloat = 100
     func tracScrollContent(location: UIScrollView) {
-        
-        if(location.contentOffset.y  == -100 ) {
+        if(location.contentOffset.y  == -contentOffsetY ) {
             tblView.isScrollEnabled = true
             tblView.bounces = false
-            tblView.contentInset = UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0)
-            
+            tblView.contentInset = UIEdgeInsets(top: contentOffsetY, left: 0, bottom: 0, right: 0)
         }else if(location.contentOffset.y >= 0 ){
             tblView.bounces = true
-
             tblView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
     }
