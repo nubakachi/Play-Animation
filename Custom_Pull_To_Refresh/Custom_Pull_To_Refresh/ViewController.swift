@@ -57,9 +57,6 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     func configureTableView() {
         tblView.register(UITableViewCell.self, forCellReuseIdentifier: "RefreshCell")
         tblView.delegate = self
-
-        
-        
         tblView.dataSource = self
     }
     
@@ -92,7 +89,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     
     func addCustomControlRefreshView() {
         customRefreshView = CustomRefreshView(frame: CGRect(x: 0, y: -100, width: self.view.frame.size.width, height: 100))
-        customRefreshView.backgroundColor = .red
+//        customRefreshView.backgroundColor = .red
         tblView.insertSubview(customRefreshView, at: 0)
         self.customRefreshView.sendSubview(toBack: tblView)
     }
@@ -121,9 +118,10 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     }
 
 
-    var contentOffsetY:CGFloat = 100
+    //Set the size of table view
+    var contentOffsetY:CGFloat = 120
     func tracScrollContent(location: UIScrollView) {
-        if(location.contentOffset.y  == -contentOffsetY ) {
+        if(location.contentOffset.y  < -contentOffsetY ) {
             tblView.isScrollEnabled = true
             tblView.bounces = false
             tblView.contentInset = UIEdgeInsets(top: contentOffsetY, left: 0, bottom: 0, right: 0)
@@ -132,8 +130,5 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
             tblView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
     }
-
-    
-    
 }
 

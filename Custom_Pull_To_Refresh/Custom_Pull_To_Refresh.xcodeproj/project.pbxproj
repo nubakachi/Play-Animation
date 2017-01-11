@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040050951E25F7170076E037 /* catImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 040050941E25F7170076E037 /* catImage.png */; };
+		040050971E25F71E0076E037 /* catImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 040050961E25F71E0076E037 /* catImage2.png */; };
 		04EC971F1E23A553000C4500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC971E1E23A553000C4500 /* AppDelegate.swift */; };
 		04EC97211E23A553000C4500 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC97201E23A553000C4500 /* ViewController.swift */; };
 		04EC97241E23A553000C4500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EC97221E23A553000C4500 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040050941E25F7170076E037 /* catImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catImage.png; sourceTree = "<group>"; };
+		040050961E25F71E0076E037 /* catImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catImage2.png; sourceTree = "<group>"; };
 		04EC971B1E23A552000C4500 /* Custom_Pull_To_Refresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Custom_Pull_To_Refresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EC971E1E23A553000C4500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04EC97201E23A553000C4500 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040050981E25F7240076E037 /* Image Accet */ = {
+			isa = PBXGroup;
+			children = (
+				040050961E25F71E0076E037 /* catImage2.png */,
+				040050941E25F7170076E037 /* catImage.png */,
+				04EC97321E23A7FF000C4500 /* Go.png */,
+			);
+			name = "Image Accet";
+			sourceTree = "<group>";
+		};
 		04EC97121E23A552000C4500 = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +74,9 @@
 		04EC971D1E23A552000C4500 /* Custom_Pull_To_Refresh */ = {
 			isa = PBXGroup;
 			children = (
+				040050981E25F7240076E037 /* Image Accet */,
 				04EC971E1E23A553000C4500 /* AppDelegate.swift */,
 				04EC97201E23A553000C4500 /* ViewController.swift */,
-				04EC97321E23A7FF000C4500 /* Go.png */,
 				04EC97221E23A553000C4500 /* Main.storyboard */,
 				04EC97301E23A7C3000C4500 /* RefreshView.xib */,
 				04EC97251E23A553000C4500 /* Assets.xcassets */,
@@ -136,7 +150,9 @@
 				04EC97291E23A553000C4500 /* LaunchScreen.storyboard in Resources */,
 				04EC97261E23A553000C4500 /* Assets.xcassets in Resources */,
 				04EC97311E23A7C3000C4500 /* RefreshView.xib in Resources */,
+				040050951E25F7170076E037 /* catImage.png in Resources */,
 				04EC97241E23A553000C4500 /* Main.storyboard in Resources */,
+				040050971E25F71E0076E037 /* catImage2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +327,7 @@
 				04EC972F1E23A553000C4500 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

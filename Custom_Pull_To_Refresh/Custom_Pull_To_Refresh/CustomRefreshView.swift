@@ -30,7 +30,7 @@ class CustomRefreshView: UIControl {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        drawTheDroplet()
+        //drawTheDroplet()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,12 +38,23 @@ class CustomRefreshView: UIControl {
     }
     
     
+    func addAnimation() {
+        
+    }
+    
     func drawTheDroplet() {
         let imageView = UIImageView(image: UIImage(named: "Go.png"))
         addSubview(imageView)
     }
     
     
+    func drawBackgroundOfImage() {
+        self.backgroundColor = UIColor.black
+    }
+    
+    func addAnimationObject() {
+        
+    }
     
     
 }
